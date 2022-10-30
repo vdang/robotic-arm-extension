@@ -17,7 +17,7 @@ namespace robotic_arm_extension {
     let base_angle_max = 0
     
     //% block
-    export function put_robotic_arm_in_starting_position() {
+    export function putRoboticArmInStartingPosition() {
         put_claw_in_default_position()
         basic.pause(500)
         put_top_arm_in_default_position()
@@ -27,7 +27,7 @@ namespace robotic_arm_extension {
         put_base_in_default_position()
     }
     //% block
-    export function reset_robotic_arm () {
+    export function resetRoboticArm () {
         while (mid_angle < mid_angle_default) {
             mid_angle += 5
             pins.servoWritePin(AnalogPin.P2, mid_angle)
@@ -59,51 +59,51 @@ namespace robotic_arm_extension {
         basic.pause(200)
         put_claw_in_default_position()
     }
-    //% block="open claw %angle_step"
+    //% block
     //% angle_step.defl=10
-    export function open_claw(angle_step: number = 10) {
+    export function openClaw(angle_step: number = 10) {
         claw_angle = Math.max(claw_angle - angle_step, claw_angle_min)
         pins.servoWritePin(AnalogPin.P8, claw_angle)
     }
-    //% block="close claw %angle_step"
+    //% block
     //% angle_step.defl=10
-    export function close_claw(angle_step: number = 10) {
+    export function closeClaw(angle_step: number = 10) {
         claw_angle = Math.min(claw_angle + angle_step, claw_angle_max)
         pins.servoWritePin(AnalogPin.P8, claw_angle)
     }
     //% block
     //% angle_step.defl=3
-    export function rotate_base_left(angle_step: number = 3) {
+    export function rotateBaseLeft(angle_step: number = 3) {
         base_angle = Math.min(base_angle + angle_step, base_angle_max)
         pins.servoWritePin(AnalogPin.P9, base_angle)
     }
     //% block
     //% angle_step.defl=3
-    export function rotate_base_right(angle_step: number = 3) {
+    export function rotateBaseRight(angle_step: number = 3) {
         base_angle = Math.max(base_angle - angle_step, base_angle_min)
         pins.servoWritePin(AnalogPin.P9, base_angle)
     }
     //% block
     //% angle_step.defl=3
-    export function lift_top_arm (angle_step: number = 3) {
+    export function liftTopArm (angle_step: number = 3) {
         top_angle = Math.max(top_angle - angle_step, top_angle_min)
         pins.servoWritePin(AnalogPin.P1, top_angle)
     }
     //% block
     //% angle_step.defl=3
-    export function lower_top_arm(angle_step: number = 3) {
+    export function lowerTopArm(angle_step: number = 3) {
         top_angle = Math.min(top_angle + angle_step, top_angle_max)
         pins.servoWritePin(AnalogPin.P1, top_angle)
     }
     //% block
     //% angle_step.defl=3
-    export function lift_middle_arm(angle_step: number = 3) {
+    export function liftMiddleArm(angle_step: number = 3) {
         mid_angle = Math.min(mid_angle + angle_step, mid_angle_max)
         pins.servoWritePin(AnalogPin.P2, mid_angle)
     }
     //% block
     //% angle_step.defl=3
-    export function lower_middle_arm(angle_step: number = 3) {
+    export function lowerMiddleArm(angle_step: number = 3) {
         mid_angle = Math.max(mid_angle - angle_step, mid_angle_min)
         pins.servoWritePin(AnalogPin.P2, mid_angle)
     }

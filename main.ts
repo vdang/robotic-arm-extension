@@ -59,13 +59,13 @@ namespace robotic_arm_extension {
         basic.pause(200)
         put_claw_in_default_position()
     }
-    //% block="open|claw %angle_step"
+    //% block="open claw %angle_step"
     //% angle_step.defl=10
     export function open_claw(angle_step: number = 10) {
         claw_angle = Math.max(claw_angle - angle_step, claw_angle_min)
         pins.servoWritePin(AnalogPin.P8, claw_angle)
     }
-    //% block="close|claw %angle_step"
+    //% block="close claw %angle_step"
     //% angle_step.defl=10
     export function close_claw(angle_step: number = 10) {
         claw_angle = Math.min(claw_angle + angle_step, claw_angle_max)

@@ -71,31 +71,37 @@ namespace robotic_arm_extension {
         claw_angle = Math.min(claw_angle + angle_step, claw_angle_max)
         pins.servoWritePin(AnalogPin.P8, claw_angle)
     }
+    //% block
     //% angle_step.defl=3
     export function rotate_base_left(angle_step: number = 3) {
         base_angle = Math.min(base_angle + angle_step, base_angle_max)
         pins.servoWritePin(AnalogPin.P9, base_angle)
     }
+    //% block
     //% angle_step.defl=3
     export function rotate_base_right(angle_step: number = 3) {
         base_angle = Math.max(base_angle - angle_step, base_angle_min)
         pins.servoWritePin(AnalogPin.P9, base_angle)
     }
+    //% block
     //% angle_step.defl=3
     export function lift_top_arm (angle_step: number = 3) {
         top_angle = Math.max(top_angle - angle_step, top_angle_min)
         pins.servoWritePin(AnalogPin.P1, top_angle)
     }
+    //% block
     //% angle_step.defl=3
     export function lower_top_arm(angle_step: number = 3) {
         top_angle = Math.min(top_angle + angle_step, top_angle_max)
         pins.servoWritePin(AnalogPin.P1, top_angle)
     }
+    //% block
     //% angle_step.defl=3
     export function lift_middle_arm(angle_step: number = 3) {
         mid_angle = Math.min(mid_angle + angle_step, mid_angle_max)
         pins.servoWritePin(AnalogPin.P2, mid_angle)
     }
+    //% block
     //% angle_step.defl=3
     export function lower_middle_arm(angle_step: number = 3) {
         mid_angle = Math.max(mid_angle - angle_step, mid_angle_min)

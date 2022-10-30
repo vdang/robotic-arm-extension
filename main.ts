@@ -59,7 +59,7 @@ namespace robotic_arm_extension {
         basic.pause(200)
         put_claw_in_default_position()
     }
-    //% block
+    //% block="open claw"
     //% angle_step.defl=10
     export function open_claw(angle_step: number = 10) {
         claw_angle = Math.max(claw_angle - angle_step, claw_angle_min)
